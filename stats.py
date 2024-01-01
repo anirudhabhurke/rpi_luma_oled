@@ -30,8 +30,8 @@ def display_stats():
             MemUsage = subprocess.check_output(cmd, shell=True).decode("utf-8")
             cmd = 'df -h | awk \'$NF=="/"{printf "Dsk: %.1f/%d GB %s", $3,$2,$5}\''
             Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
-            ip_text = "IP : " + IP
-            cpu_text = "CPU: " + CPU
+            ip_text = "IP: " + IP
+            cpu_text = "CPU load: " + CPU
             draw.text((0, 0), ip_text, fill="white", font=font)
             draw.text((0, 15), cpu_text, fill="white", font=font)
             draw.text((0, 30), MemUsage, fill="white", font=font)
