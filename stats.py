@@ -28,10 +28,10 @@ def display_stats():
             CPU = subprocess.check_output(cmd, shell=True).decode("utf-8")
             cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%s MB\", $3,$2 }'"
             MemUsage = subprocess.check_output(cmd, shell=True).decode("utf-8")
-            cmd = 'df -h | awk \'$NF=="/"{printf "Disk: %d/%d GB  %s", $3,$2,$5}\''
+            cmd = 'df -h | awk \'$NF=="/"{printf "Dsk: %.1f/%d GB %s", $3,$2,$5}\''
             Disk = subprocess.check_output(cmd, shell=True).decode("utf-8")
-            ip_text = "IP: " + IP
-            cpu_text = "CPU load: " + CPU
+            ip_text = "IP : " + IP
+            cpu_text = "CPU: " + CPU
             draw.text((0, 0), ip_text, fill="white", font=font)
             draw.text((0, 15), cpu_text, fill="white", font=font)
             draw.text((0, 30), MemUsage, fill="white", font=font)
